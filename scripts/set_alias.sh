@@ -5,7 +5,7 @@
 FILE=${BASH_ALIAS_FILE:-~/.bashrc}
 
 set_jarvis_docker() {
-    set_alias "docker run -it --rm jarvis:latest bash -c 'jarvis'"
+    set_alias "docker run -it --rm -v $(pwd):/project -e OPENAI_API_KEY=${OPENAI_API_KEY} jarvis:latest bash -c 'jarvis'"
 }
 
 set_jarvis_python() {
